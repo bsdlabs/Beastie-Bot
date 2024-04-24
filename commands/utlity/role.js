@@ -15,14 +15,18 @@
  */
 
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
-const { assignable_roles, logChannelID } = require("../../config.json");
+const { assignable_roles, logChannelID, repo } = require("../../config.json");
 
 function roleLogger(interaction, message) {
   interaction.client.channels.cache.get(logChannelID).send({
     embeds: [
       new EmbedBuilder()
         .setTitle('Role Management')
-        .setAuthor({ name: 'Beastie Bot', iconURL: 'https://cdn.discordapp.com/app-icons/1220378924622544906/11ccacbe9f39548ec287eeaf827bd326.png', url: 'https://github.com/jsm222/discordbot' })
+        .setAuthor({
+          name: 'Beastie Bot',
+          iconURL: repo.icon,
+          url: repo.link
+        })
         .setDescription(message)
         .addFields(
           { name: 'Interaction ID', value: interaction.id, inline: true },

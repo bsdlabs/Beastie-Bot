@@ -17,7 +17,7 @@
 const { Events, EmbedBuilder } = require('discord.js');
 const { query } = require('../db.js');
 const { createHash } = require('crypto');
-const { logChannelID, logger, antispam } = require('../config.json');
+const { logChannelID, logger, antispam, repo } = require('../config.json');
 const { escapeIdentifier } = require('pg');
 
 // sleep code comes from https://stackoverflow.com/a/41957152
@@ -31,8 +31,8 @@ async function spamLogger(messageData) {
                 .setTitle(`Anti-Spam`)
                 .setAuthor({
                     name: 'Beastie Bot',
-                    iconURL: 'https://cdn.discordapp.com/app-icons/1220378924622544906/11ccacbe9f39548ec287eeaf827bd326.png',
-                    url: 'https://github.com/jsm222/discordbot'
+                    iconURL: repo.icon,
+                    url: repo.link
                 })
                 .setDescription(`The following spam message was deleted from the server. Please do not click any links it may contain as they may be dangerous.\n> ${messageData.content}`)
                 .addFields(

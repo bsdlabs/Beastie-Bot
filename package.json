@@ -8,10 +8,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jsm222/discordbot.git"
+    "url": "https://github.com/bsdlabs/Beastie-Bot.git"
   },
   "bugs": {
-    "url": "https://github.com/jsm222/discordbot/issues"
+    "url": "https://github.com/bsdlabs/Beastie-Bot/issues"
   },
   "main": "index.js",
   "dependencies": {
