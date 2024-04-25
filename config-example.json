@@ -39,6 +39,9 @@
             "ROLE_ID"
         ]
     },
+    "suspiciousJoin": {
+        "createToJoinDifferenceSeconds": 2880
+    },
     "assignable_roles": [
         {
             "name": "red",
