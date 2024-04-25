@@ -196,7 +196,7 @@ async function processSpam(messageData, messageHash) {
     await unlockUser(messageData.author.id);
 }
 
-// log the sign in to stdout upon load
+// scan all new messages for spam
 module.exports = {
     name: Events.MessageCreate,
     async execute(message) {

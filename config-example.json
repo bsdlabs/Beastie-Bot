@@ -4,6 +4,14 @@
     "clientSecret": "CLIENT_SECRET",
     "guildId": "GUILD_ID",
     "logChannelID": "CHANNEL_ID",
+    "repo": {
+        "link": "https://github.com/bsdlabs/Beastie-Bot",
+        "icon": "https://cdn.discordapp.com/app-icons/1220378924622544906/11ccacbe9f39548ec287eeaf827bd326.png"
+    },
+    "info": {
+        "rules": "https://wiki.freebsd.org/Discord#Guidelines_.26_Rules",
+        "helpers": "https://wiki.freebsd.org/Discord/CommunityHelpers"
+    },
     "deployCommands": {
         "commandCachePath": "./command-cache.json"
     },
