@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+name="Beastie Bot $RC_SVCNAME"
+command="/usr/bin/npm"
+pidfile="/run/$RC_SVCNAME.pid"
+command_args="start --prefix /home/alpine/Beastie-Bot/"
+command_background=true
+command_user="alpine:alpine"
+
+depend() {
+    need localmount
+    need logger
+    need postgresql
+}
