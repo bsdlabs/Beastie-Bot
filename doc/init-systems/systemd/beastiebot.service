@@ -1,0 +1,13 @@
+[Unit]
+Description=Beastie Bot - A modular bot for the FreeBSD Discord server
+Documentation=https://github.com/bsdlabs/Beastie-Bot
+After=network.target
+
+[Service]
+User=arch
+WorkingDirectory=/home/arch/Beastie-Bot/
+ExecStart=npm start
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
