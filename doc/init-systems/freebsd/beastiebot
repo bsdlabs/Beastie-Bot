@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+#
+
+# PROVIDE: beastiebot
+# REQUIRE: postgresql
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="beastiebot"
+desc="Beastie Bot"
+rcvar="beastiebot_enable"
+command="/home/beastie/Beastie-Bot/doc/init-systems/freebsd/start"
+pidfile="/var/run/${name}.pid"
+
+load_rc_config $name
+run_rc_command "$1"

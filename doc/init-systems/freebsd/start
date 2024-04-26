@@ -1,0 +1,6 @@
+#!/bin/sh
+
+PATH="$PATH:/usr/local/bin/"
+
+cd /home/beastie/Beastie-Bot/
+su beastie -c "npm start &"
