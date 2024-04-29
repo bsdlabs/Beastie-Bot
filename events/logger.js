@@ -85,9 +85,14 @@ async function insertMessage(channelID, userID, messageID, messageHash, timestam
 module.exports = {
     name: Events.MessageCreate,
     execute(message) {
-        // CHECK: do not log messages sent by the bot itself
-        if (message.author.id != message.client.user.id) {
-            insertMessage(message.channelId, message.author.id, message.id, createHash('sha512').update(message.content).digest('hex'), message.createdTimestamp);
+        // do not process own messages
+        if (message.author.id == message.client.user.id) {
+            return;
         }
+        // do not process bot messages
+        if (message.author.bot) {
+            return;
+        }
+        insertMessage(message.channelId, message.author.id, message.id, createHash('sha512').update(message.content).digest('hex'), message.createdTimestamp);
     }
 };

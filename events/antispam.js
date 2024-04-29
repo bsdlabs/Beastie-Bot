@@ -200,8 +200,12 @@ async function processSpam(messageData, messageHash) {
 module.exports = {
     name: Events.MessageCreate,
     async execute(message) {
-        // do not process bot messages
+        // do not process own messages
         if (message.author.id == message.client.user.id) {
+            return;
+        }
+        // do not process bot messages
+        if (message.author.bot) {
             return;
         }
         // do not run for protected roles
