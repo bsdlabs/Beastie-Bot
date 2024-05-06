@@ -93,6 +93,11 @@ module.exports = {
         if (message.author.bot) {
             return;
         }
+        // do not process empty messages
+        if (message.content.length == 0) {
+            return;
+        }
+        // log message
         insertMessage(message.channelId, message.author.id, message.id, createHash('sha512').update(message.content).digest('hex'), message.createdTimestamp);
     }
 };

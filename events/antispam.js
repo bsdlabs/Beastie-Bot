@@ -208,6 +208,10 @@ module.exports = {
         if (message.author.bot) {
             return;
         }
+        // do not process empty messages
+        if (message.content.length == 0) {
+            return;
+        }
         // do not run for protected roles
         if (message.guild.members.cache.get(message.author.id).roles.cache.some(aRole => antispam.protectedRoleIds.some(pRole => aRole.id == pRole))) {
             return;
