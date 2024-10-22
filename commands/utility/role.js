@@ -56,7 +56,7 @@ module.exports = {
     // grab the user's typed string so far
     const focusedValue = interaction.options.getFocused();
     // get the possible options
-    const choices = assignable_roles.map((role) => role.name);
+    const choices = assignable_roles.filter(role => !role.hidden).map((role) => role.name);
     // make an array of relevant suggestions
     const filtered = choices.filter(choice => choice.startsWith(focusedValue));
     // give the suggestions to the user

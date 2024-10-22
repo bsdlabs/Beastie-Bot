@@ -27,7 +27,9 @@ module.exports = {
     // generate list
     let response = "# Self Assignable Roles\n";
     for (let i in assignable_roles) {
-      response += `- **${assignable_roles[i].name}**: ${assignable_roles[i].description}\n`;
+      if (!assignable_roles[i].hidden) {
+        response += `- **${assignable_roles[i].name}**: ${assignable_roles[i].description}\n`;
+      }
     }
     response += "*Use `/role <name>` to apply any role from this list.*\n";
     // respond to user interaction

@@ -44,54 +44,70 @@
             "name": "red",
             "description": "sets your nickname color to red",
             "group": "color",
+            "hidden": false,
             "id": "ROLE_ID"
         },
         {
             "name": "orange",
             "description": "sets your nickname color to orange",
             "group": "color",
+            "hidden": false,
             "id": "ROLE_ID"
         },
         {
             "name": "yellow",
             "description": "sets your nickname color to yellow",
             "group": "color",
+            "hidden": false,
             "id": "ROLE_ID"
         },
         {
             "name": "green",
             "description": "sets your nickname color to green",
             "group": "color",
+            "hidden": false,
             "id": "ROLE_ID"
         },
         {
             "name": "blue",
             "description": "sets your nickname color to blue",
             "group": "color",
+            "hidden": false,
             "id": "ROLE_ID"
         },
         {
             "name": "purple",
             "description": "sets your nickname color to purple",
             "group": "color",
+            "hidden": false,
             "id": "ROLE_ID"
         },
         {
             "name": "grey",
             "description": "sets your nickname color to grey",
             "group": "color",
+            "hidden": false,
             "id": "ROLE_ID"
         },
         {
             "name": "vc-ping",
             "description": "mentioned by members who want to talk in voice chat",
             "group": "vc-ping",
+            "hidden": false,
             "id": "ROLE_ID"
         },
         {
             "name": "free-games-ping",
             "description": "mentioned by members who want to share a free game",
             "group": "free-games-ping",
+            "hidden": false,
+            "id": "ROLE_ID"
+        },
+        {
+            "name": "hidden-role",
+            "description": "a hidden role",
+            "group": "hidden-role",
+            "hidden": true,
             "id": "ROLE_ID"
         }
     ]
