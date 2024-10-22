@@ -31,6 +31,9 @@ module.exports = {
     }
     response += "*Use `/role <name>` to apply any role from this list.*\n";
     // respond to user interaction
-    await interaction.reply(response);
+    await interaction.reply({
+      content: response,
+      ephemeral: true
+    });
   },
 }

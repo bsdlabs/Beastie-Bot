@@ -105,6 +105,9 @@ module.exports = {
     }
     // inform user on execution status
     roleLogger(interaction, logText);
-    return success ? interaction.reply("Ok. Your roles were updated.") : interaction.reply("Unknown or invalid role.");
+    return interaction.reply({
+      content: success ? "Ok. Your roles were updated." : "Unknown or invalid role.",
+      ephemeral: true
+    });
   }
 }

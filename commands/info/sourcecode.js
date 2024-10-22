@@ -25,6 +25,9 @@ module.exports = {
   // add a command to display the repo link
   async execute(interaction) {
     // respond to user interaction
-    await interaction.reply(`Beastie Bot is maintained at ${repo.link}.`);
+    await interaction.reply({
+      content: `Beastie Bot is maintained at ${repo.link}.`,
+      ephemeral: true
+    });
   },
 }

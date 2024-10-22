@@ -25,6 +25,9 @@ module.exports = {
   // add a command to display a link to the server rules
   async execute(interaction) {
     // respond to user interaction
-    await interaction.reply(`Our server rules can be found at ${info.rules}.`);
+    await interaction.reply({
+      content: `Our server rules can be found at ${info.rules}.`,
+      ephemeral: true
+    });
   },
 }

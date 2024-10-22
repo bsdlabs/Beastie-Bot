@@ -25,6 +25,9 @@ module.exports = {
   // add a command to display a link to the helpers wiki page
   async execute(interaction) {
     // respond to user interaction
-    await interaction.reply(`Information on the Community Helpers can be found at ${info.helpers}.`);
+    await interaction.reply({
+      content: `Information on the Community Helpers can be found at ${info.helpers}.`,
+      ephemeral: true
+    });
   },
 }
