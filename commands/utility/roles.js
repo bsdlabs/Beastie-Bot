@@ -1,5 +1,5 @@
 /**
- * Copyright 2024 Jesper Schmitz Mouridsen and Cait Himes
+ * Copyright 2025 Jesper Schmitz Mouridsen and Cait Himes
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS”
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -14,9 +14,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+// import required modules
 const { SlashCommandBuilder } = require('discord.js');
 const { assignable_roles } = require("../../config.json");
 
+// add a roles command that lists out all the assignable roles
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('roles')

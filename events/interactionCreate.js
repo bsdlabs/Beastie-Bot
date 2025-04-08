@@ -1,5 +1,5 @@
 /**
- * Copyright 2024 Jesper Schmitz Mouridsen and Cait Himes
+ * Copyright 2025 Jesper Schmitz Mouridsen and Cait Himes
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS”
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -14,6 +14,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+// import required modules
 const { Events } = require('discord.js');
 
 // respond to interaction events

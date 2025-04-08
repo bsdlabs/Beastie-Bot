@@ -1,5 +1,5 @@
 /**
- * Copyright 2024 Jesper Schmitz Mouridsen and Cait Himes
+ * Copyright 2025 Jesper Schmitz Mouridsen and Cait Himes
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS”
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -14,6 +14,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+// import needed modules
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
@@ -34,14 +35,14 @@ for (const file of initFiles) {
 // create a new Discord client
 const client = new Client({
 	intents: [
-		GatewayIntentBits.Guilds,
-		GatewayIntentBits.GuildMembers,
-		GatewayIntentBits.GuildMessages,
-		GatewayIntentBits.MessageContent
+		GatewayIntentBits.Guilds,	     // required for Discord servers to work
+		GatewayIntentBits.GuildMembers,  // required to get server members
+		GatewayIntentBits.GuildMessages, // required to process commands
+		GatewayIntentBits.MessageContent // required to read message contents
 	]
 });
 
-// scan for command files
+// scan for command files and load them
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
@@ -59,7 +60,7 @@ for (const folder of commandFolders) {
 	}
 }
 
-// scan for event files
+// scan for event files and load them
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 for (const file of eventFiles) {

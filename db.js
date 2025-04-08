@@ -1,5 +1,5 @@
 /**
- * Copyright 2024 Jesper Schmitz Mouridsen and Cait Himes
+ * Copyright 2025 Jesper Schmitz Mouridsen and Cait Himes
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS”
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -23,9 +23,11 @@
  * https://node-postgres.com/guides/project-structure
  */
 
+// import required modules
 const { Pool } = require("pg")
 const { postgresql } = require("./config.json")
 
+// create a pool for connecting to a PostreSQL server
 const pool = new Pool({
     "host": postgresql.address,
     "port": postgresql.port,
@@ -34,8 +36,10 @@ const pool = new Pool({
     "database": postgresql.database_name
 })
 
+// implement and export helper methods for sending database queries
 module.exports = {
     "query": async (text, params) => {
+        // execute a query in the database
         const start = Date.now()
         const res = await pool.query(text, params)
         const duration = Date.now() - start
@@ -43,6 +47,7 @@ module.exports = {
         return res
     },
     "getClient": async () => {
+        // connect to the server and grab a client instance
         const client = await pool.connect()
         const query = client.query
         const release = client.release

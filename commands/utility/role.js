@@ -1,5 +1,5 @@
 /**
- * Copyright 2024 Jesper Schmitz Mouridsen and Cait Himes
+ * Copyright 2025 Jesper Schmitz Mouridsen and Cait Himes
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS”
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -14,9 +14,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+// import required modules
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { assignable_roles, logChannelID, repo } = require("../../config.json");
 
+// helper function to write the role change to the logs channel
 function roleLogger(interaction, message) {
   interaction.client.channels.cache.get(logChannelID).send({
     embeds: [
@@ -37,6 +39,7 @@ function roleLogger(interaction, message) {
   });
 }
 
+// add a slash command called role that allows users to set a role
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("role")
